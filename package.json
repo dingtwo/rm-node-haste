@@ -1,6 +1,6 @@
 {
   "name": "rm-node-haste",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "repository": "https://github.com/dingtwo/rm-node-haste.git",
   "author": "Dingjz <ddqiuzhi@163.com>",
@@ -17,6 +17,7 @@
     "rm-node-haste"
   ],
   "dependencies": {
+    "@babel/parser": "^7.4.4",
     "chalk": "^2.4.2",
     "fs-extra": "^7.0.1",
     "inquirer": "^6.2.2",
@@ -24,7 +25,7 @@
     "recast": "^0.17.5"
   },
   "devDependencies": {
-    "typescript": "^3.4.1",
-    "@types/node": "^11.13.0"
+    "@types/node": "^11.13.0",
+    "typescript": "^3.4.1"
   }
 }

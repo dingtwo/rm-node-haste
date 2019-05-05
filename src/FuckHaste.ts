@@ -44,7 +44,9 @@ export default class FuckHaste {
   findAllModule(): void {
     this.files.forEach(file => {
       const sourceCode = fs.readFileSync(file.path).toString();
-      const ast = recast.parse(sourceCode);
+      const ast = recast.parse(sourceCode, {
+        parser: require('@babel/parser'),
+      });
       const _this = this;
       recast.visit(ast, {
         visitComment(p) {
@@ -64,7 +66,9 @@ export default class FuckHaste {
   replaceAllHaste(): void {
     this.files.forEach(file => {
       const sourceCode = fs.readFileSync(file.path).toString();
-      const ast = recast.parse(sourceCode);
+      const ast = recast.parse(sourceCode, {
+        parser: require('@babel/parser'),
+      });
       const _this = this;
       recast.visit(ast, {
         visitLiteral(p) {
