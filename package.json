@@ -9,7 +9,8 @@
   "scripts": {
     "start": "tsc && node dist/index.js",
     "tsc": "tsc",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "tsc"
   },
   "keywords": [
     "node-haste",
@@ -19,12 +20,11 @@
     "chalk": "^2.4.2",
     "fs-extra": "^7.0.1",
     "inquirer": "^6.2.2",
-    "jscodeshift": "^0.6.3",
     "klaw-sync": "^6.0.0",
-    "recast": "^0.17.5",
-    "typescript": "^3.4.1"
+    "recast": "^0.17.5"
   },
   "devDependencies": {
+    "typescript": "^3.4.1",
     "@types/node": "^11.13.0"
   }
 }
