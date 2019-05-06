@@ -10,7 +10,7 @@
     "start": "tsc && node dist/index.js",
     "tsc": "tsc",
     "build": "tsc",
-    "prepublish": "tsc"
+    "prepublishOnly": "tsc"
   },
   "keywords": [
     "node-haste",
@@ -25,6 +25,7 @@
     "recast": "^0.17.5"
   },
   "devDependencies": {
+    "@babel/types": "^7.4.4",
     "@types/node": "^11.13.0",
     "typescript": "^3.4.1"
   }
