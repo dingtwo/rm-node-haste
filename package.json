@@ -1,6 +1,6 @@
 {
   "name": "rm-node-haste",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "repository": "https://github.com/dingtwo/rm-node-haste.git",
   "author": "Dingjz <ddqiuzhi@163.com>",

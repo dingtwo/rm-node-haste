@@ -26,6 +26,7 @@ interface Module {
 
 const parser = {
   parse(source) {
+    // TODO: 插件作为参数
     return babelParse.parse(source, {
       plugins: ['jsx', 'classProperties', 'decorators-legacy'],
       sourceType: 'module',
