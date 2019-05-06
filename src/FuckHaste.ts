@@ -4,6 +4,7 @@ import path = require('path');
 import fs = require('fs-extra');
 import chalk from 'chalk';
 import recast from 'recast';
+import babelParse from '@babel/parser';
 
 import {
   getAbslutePath,
@@ -22,6 +23,16 @@ interface Module {
   name: string;
   path: string;
 }
+
+const parser = {
+  parse(source) {
+    return babelParse.parse(source, {
+      plugins: ['jsx', 'classProperties', 'decorators-legacy'],
+      sourceType: 'module',
+      tokens: true,
+    } as babelParse.ParserOptions);
+  },
+};
 
 export default class FuckHaste {
   _rootPath: string;
@@ -45,7 +56,7 @@ export default class FuckHaste {
     this.files.forEach(file => {
       const sourceCode = fs.readFileSync(file.path).toString();
       const ast = recast.parse(sourceCode, {
-        parser: require('@babel/parser'),
+        parser,
       });
       const _this = this;
       recast.visit(ast, {
@@ -67,7 +78,7 @@ export default class FuckHaste {
     this.files.forEach(file => {
       const sourceCode = fs.readFileSync(file.path).toString();
       const ast = recast.parse(sourceCode, {
-        parser: require('@babel/parser'),
+        parser,
       });
       const _this = this;
       recast.visit(ast, {
@@ -83,7 +94,7 @@ export default class FuckHaste {
                   '即将替换, before: ' +
                     chalk.bgRed.white(p.node.value) +
                     ' after:' +
-                    chalk.bgGreen.white(absPath)
+                    chalk.bgGreen.white(file.path)
                 );
                 p.replace(builders.literal(absPath));
               }
