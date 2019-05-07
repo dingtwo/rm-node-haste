@@ -1,10 +1,10 @@
 import assert = require('assert');
 import klawSync = require('klaw-sync');
 import path = require('path');
+import babelParse = require('@babel/parser');
 import fs = require('fs-extra');
 import chalk from 'chalk';
 import recast from 'recast';
-import babelParse from '@babel/parser';
 
 import {
   getAbslutePath,
@@ -92,9 +92,9 @@ export default class FuckHaste {
                   module.path
                 );
                 console.log(
-                  '即将替换, before: ' +
+                  '即将替换module: ' +
                     chalk.bgRed.white(p.node.value) +
-                    ' after:' +
+                    'filePath:' +
                     chalk.bgGreen.white(file.path)
                 );
                 p.replace(builders.literal(absPath));
