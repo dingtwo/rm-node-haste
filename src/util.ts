@@ -2,7 +2,6 @@ const path = require('path');
 import { NodePath } from 'ast-types';
 import recast from 'recast';
 import chalk from 'chalk';
-import { get } from 'http';
 
 const {
   types: { namedTypes },

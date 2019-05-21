@@ -68,10 +68,13 @@ export default class FuckHaste {
               path: file.path,
               name,
             });
+            p.replace(builders.commentBlock(p.value.value.replace('providesModule', 'providesModuleTs')));
           }
           return false;
         },
       });
+      const resultCode = recast.print(ast).code;
+      fs.writeFileSync(file.path, resultCode);
     });
   }
 
