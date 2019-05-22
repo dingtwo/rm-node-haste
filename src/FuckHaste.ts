@@ -68,7 +68,7 @@ export default class FuckHaste {
               path: file.path,
               name,
             });
-            p.replace(builders.commentBlock(p.value.value.replace('providesModule', 'providesModuleTs')));
+            // p.replace(builders.commentBlock(p.value.value.replace('providesModule', 'providesModuleTs')));
           }
           return false;
         },

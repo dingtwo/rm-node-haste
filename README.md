@@ -2,9 +2,7 @@
 **使用前建议备份原文件:)**
 
 使用recast把所有使用@providesModule的模块替换为相对路径引用的方式
-并且会把@providesModule改成@providesModuleTs
 
 
 ## TODO:
-1. 使用prettier优化代码
-2. 添加parse参数
+- [ ] 添加parse参数
